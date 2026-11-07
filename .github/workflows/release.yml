@@ -61,7 +61,9 @@ jobs:
           fi
           curl -fsSL -o "dist/slovoplet-$VERSION.apk" "$SITE/update.php?a=download"
           ls -l "dist/slovoplet-$VERSION.apk"
-          file "dist/slovoplet-$VERSION.apk" | grep -qi zip || { echo "скачалось не то"; exit 1; }
+          # APK — это zip-архив: проверяем подпись «PK» в начале файла.
+          head -c 2 "dist/slovoplet-$VERSION.apk" | grep -q '^PK' \
+            || { echo "скачалось не то: это не пакет"; exit 1; }
 
       - name: Создать выпуск
         env:
