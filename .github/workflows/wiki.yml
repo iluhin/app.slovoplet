@@ -1,0 +1,52 @@
+# Выкладка вики из папки wiki/ этого репозитория.
+#
+# Вики GitHub — отдельный git-репозиторий (<репозиторий>.wiki.git), и
+# редактировать её руками неудобно: страницы разъезжаются с заметками к
+# выпускам. Здесь они лежат рядом с кодом страницы и выкладываются кнопкой.
+#
+# Actions → «Выкладка вики» → Run workflow.
+#
+# Вики должна быть создана: вкладка Wiki → сохранить любую первую страницу,
+# иначе репозитория вики ещё не существует и пушить некуда.
+name: Выкладка вики
+
+on:
+  workflow_dispatch:
+    inputs:
+      prune:
+        description: 'Удалить в вики страницы, которых нет в wiki/'
+        type: boolean
+        required: false
+        default: true
+
+permissions:
+  contents: write
+
+jobs:
+  wiki:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Перенести страницы и запушить
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PRUNE: ${{ inputs.prune }}
+        run: |
+          ls wiki/*.md >/dev/null || { echo "в wiki/ нет страниц"; exit 1; }
+          git clone "https://x-access-token:$GH_TOKEN@github.com/${{ github.repository }}.wiki.git" wiki-repo
+          if [ "$PRUNE" = "true" ]; then
+            find wiki-repo -maxdepth 1 -name '*.md' -delete
+          fi
+          cp wiki/*.md wiki-repo/
+          cd wiki-repo
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "вики уже в этом состоянии — нечего выкладывать"
+            exit 0
+          fi
+          git commit -m "Вики из wiki/ (${{ github.sha }})"
+          git push origin HEAD
+          echo "страницы выложены:"; ls *.md
