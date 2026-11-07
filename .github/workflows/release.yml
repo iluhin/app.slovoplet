@@ -1,0 +1,83 @@
+# Публикация выпуска «Словоплёта».
+#
+# Actions → «Публикация выпуска» → Run workflow. Тег и релиз создаёт сам
+# GitHub своим токеном.
+#
+# Файл APK в репозитории не хранится: раннер скачивает свежий прямо с сайта
+# (`update.php?a=download`) и перед публикацией сверяет, что это та самая
+# версия. Поэтому порядок такой: сначала сайт обновлён, потом выпуск.
+name: Публикация выпуска
+
+on:
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: 'Тег, например v2.3'
+        required: true
+      title:
+        description: 'Заголовок выпуска'
+        required: true
+      version:
+        description: 'Версия приложения, например 2.3 (пусто — без файла APK)'
+        required: false
+        default: ''
+      latest:
+        description: 'Пометить как последний'
+        type: boolean
+        required: false
+        default: true
+
+permissions:
+  contents: write
+
+env:
+  SITE: https://5bukv.iluh.in
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Взять заметку к выпуску
+        env:
+          TAG: ${{ inputs.tag }}
+        run: |
+          test -f "releases/$TAG.md" || { echo "нет файла releases/$TAG.md"; exit 1; }
+          mkdir -p dist
+          tail -n +3 "releases/$TAG.md" > dist/notes.md
+          echo "--- заметка ---"; cat dist/notes.md
+
+      - name: Скачать APK с сайта
+        if: ${{ inputs.version != '' }}
+        env:
+          VERSION: ${{ inputs.version }}
+        run: |
+          HAVE=$(curl -fsSL "$SITE/update.php?a=check&code=0" | python3 -c 'import sys,json;print(json.load(sys.stdin).get("versionName",""))')
+          echo "на сайте сейчас: $HAVE, нужна: $VERSION"
+          if [ "$HAVE" != "$VERSION" ]; then
+            echo "Сайт отдаёт другую версию — сначала выложите $VERSION, потом публикуйте выпуск."
+            exit 1
+          fi
+          curl -fsSL -o "dist/slovoplet-$VERSION.apk" "$SITE/update.php?a=download"
+          ls -l "dist/slovoplet-$VERSION.apk"
+          file "dist/slovoplet-$VERSION.apk" | grep -qi zip || { echo "скачалось не то"; exit 1; }
+
+      - name: Создать выпуск
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TAG: ${{ inputs.tag }}
+          TITLE: ${{ inputs.title }}
+          VERSION: ${{ inputs.version }}
+          LATEST: ${{ inputs.latest }}
+        run: |
+          if gh release view "$TAG" >/dev/null 2>&1; then
+            echo "выпуск $TAG уже есть — пропускаю"
+            exit 0
+          fi
+          FILES=""
+          [ -n "$VERSION" ] && FILES="dist/slovoplet-$VERSION.apk"
+          gh release create "$TAG" $FILES \
+            --title "$TITLE" \
+            --notes-file dist/notes.md \
+            --latest=$LATEST
