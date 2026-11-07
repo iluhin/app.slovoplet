@@ -25,6 +25,10 @@ on:
         description: 'Или файл из репозитория, например apk/5bukv-2.2.apk'
         required: false
         default: ''
+      sha256:
+        description: 'Контрольная сумма ожидаемого APK (необязательно)'
+        required: false
+        default: ''
       recreate:
         description: 'Пересоздать выпуск, если он уже есть'
         type: boolean
@@ -61,6 +65,7 @@ jobs:
         if: ${{ inputs.version != '' }}
         env:
           VERSION: ${{ inputs.version }}
+          WANT_SHA: ${{ inputs.sha256 }}
         run: |
           HAVE=$(curl -fsSL "$SITE/update.php?a=check&code=0" | python3 -c 'import sys,json;print(json.load(sys.stdin).get("versionName",""))')
           echo "на сайте сейчас: $HAVE, нужна: $VERSION"
@@ -73,6 +78,12 @@ jobs:
           # APK — это zip-архив: проверяем подпись «PK» в начале файла.
           head -c 2 "dist/slovoplet-$VERSION.apk" | grep -q '^PK' \
             || { echo "скачалось не то: это не пакет"; exit 1; }
+          GOT_SHA=$(sha256sum "dist/slovoplet-$VERSION.apk" | cut -d' ' -f1)
+          echo "контрольная сумма: $GOT_SHA"
+          if [ -n "$WANT_SHA" ] && [ "$GOT_SHA" != "$WANT_SHA" ]; then
+            echo "Сайт отдал не тот файл — ожидалась сумма $WANT_SHA."
+            exit 1
+          fi
 
       - name: Взять файл из репозитория
         if: ${{ inputs.file != '' }}
