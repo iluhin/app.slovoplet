@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="cover.png" alt="Словоплёт">
+<img src="cover.jpg" alt="Словоплёт">
 
 # Словоплёт
 
