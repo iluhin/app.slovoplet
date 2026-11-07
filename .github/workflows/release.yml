@@ -34,6 +34,11 @@ on:
         type: boolean
         required: false
         default: false
+      drop:
+        description: 'Только удалить выпуск с этим тегом и ничего не создавать'
+        type: boolean
+        required: false
+        default: false
       latest:
         description: 'Пометить как последний'
         type: boolean
@@ -52,7 +57,21 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Удалить выпуск
+        if: ${{ inputs.drop }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TAG: ${{ inputs.tag }}
+        run: |
+          if gh release view "$TAG" >/dev/null 2>&1; then
+            gh release delete "$TAG" --yes --cleanup-tag
+            echo "выпуск $TAG удалён"
+          else
+            echo "выпуска $TAG нет — нечего удалять"
+          fi
+
       - name: Взять заметку к выпуску
+        if: ${{ !inputs.drop }}
         env:
           TAG: ${{ inputs.tag }}
         run: |
@@ -62,7 +81,7 @@ jobs:
           echo "--- заметка ---"; cat dist/notes.md
 
       - name: Скачать APK с сайта
-        if: ${{ inputs.version != '' }}
+        if: ${{ inputs.version != '' && !inputs.drop }}
         env:
           VERSION: ${{ inputs.version }}
           WANT_SHA: ${{ inputs.sha256 }}
@@ -86,7 +105,7 @@ jobs:
           fi
 
       - name: Взять файл из репозитория
-        if: ${{ inputs.file != '' }}
+        if: ${{ inputs.file != '' && !inputs.drop }}
         env:
           FILE: ${{ inputs.file }}
         run: |
@@ -96,6 +115,7 @@ jobs:
             || { echo "это не пакет"; exit 1; }
 
       - name: Создать выпуск
+        if: ${{ !inputs.drop }}
         env:
           GH_TOKEN: ${{ github.token }}
           TAG: ${{ inputs.tag }}
