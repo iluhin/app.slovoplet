@@ -1,13 +1,15 @@
-### Словоплёт
+## Словоплёт Beta
 
-- [Главная](Home)
-- [Как играть](Rules)
-- [Приложение для Android](Android)
-- [Игра без интернета](Offline)
-- [История версий](Versions)
-- [Как это устроено](Architecture)
-- [Частые вопросы](FAQ)
+- [Главная beta](../README.md)
+- [Справка](Home.md)
+- [Установка Android](Android.md)
+- [Проверка 3.0 → 3.0.1](../docs/TESTING.md)
+- [Версии](Versions.md)
+- [Архитектура](Architecture.md)
+- [Офлайн](Offline.md)
+- [Правила](Rules.md)
+- [Вопросы](FAQ.md)
+- [План beta](../ROADMAP.md)
+- [Обратная связь](../CONTRIBUTING.md)
 
----
-
-🌐 [Играть](https://5bukv.iluh.in/)
+[Стабильный main](https://github.com/iluhin/app.slovoplet/tree/main)

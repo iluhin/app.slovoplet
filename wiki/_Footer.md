@@ -1,1 +1,1 @@
-Словоплёт · [5bukv.iluh.in](https://5bukv.iluh.in/) · © Илья Анисимов, [iluh.in](https://iluh.in)
+Словоплёт · **Beta-канал** · [Главная beta](../README.md) · [Стабильный main](https://github.com/iluhin/app.slovoplet/tree/main) · © Илья Анисимов, [iluh.in](https://iluh.in)
