@@ -1,6 +1,6 @@
 # Проверка обновления 3.0 → 3.0.1
 
-[Главная beta](../README.md) · [Установка](../wiki/Android.md) · [Отчёт об ошибке](../CONTRIBUTING.md)
+[Главная beta](../README.md) · [Установка](https://github.com/iluhin/app.slovoplet/wiki/Android) · [Отчёт об ошибке](../CONTRIBUTING.md)
 
 ## Подготовка
 

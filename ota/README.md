@@ -1,6 +1,6 @@
 # Beta-канал веб-компонентов
 
-[Главная beta](../README.md) · [Проверить 3.0 → 3.0.1](../docs/TESTING.md) · [Архитектура](../wiki/Architecture.md)
+[Главная beta](../README.md) · [Проверить 3.0 → 3.0.1](../docs/TESTING.md) · [Архитектура](https://github.com/iluhin/app.slovoplet/wiki/Architecture)
 
 Текущая версия компонентов — **3.0.1**, ревизия `30001`.
 Совместимые сборки оболочки: `30000–39999`. Пакет: `con.iluhin.fiveletters.beta`.

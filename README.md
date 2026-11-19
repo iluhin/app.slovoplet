@@ -14,7 +14,7 @@
 
 [**Скачать APK 3.0 beta**](https://github.com/iluhin/app.slovoplet/releases/download/beta-v3.0.0/slovoplet-beta-3.0.apk) ·
 [**Проверить обновление**](docs/TESTING.md) ·
-[**Справка beta**](wiki/Home.md) ·
+[**Справка игры**](https://github.com/iluhin/app.slovoplet/wiki) ·
 [**Стабильная версия**](https://github.com/iluhin/app.slovoplet/tree/main)
 
 </div>
@@ -63,7 +63,7 @@ flowchart LR
 - Манифест подписан ключом владельца, открытый ключ закреплён в APK. Проверяются хеши, пути, размеры, версия и совместимость.
 - Нативный код, разрешения и иконка Android обновляются новым APK. Проверка компонентов работает, пока приложение запущено.
 
-[Архитектура и формат канала →](wiki/Architecture.md) · [Проверки и ограничения →](docs/VERIFICATION.md)
+[Архитектура и формат канала →](https://github.com/iluhin/app.slovoplet/wiki/Architecture) · [Проверки и ограничения →](docs/VERIFICATION.md)
 
 ## Разработка beta
 
@@ -80,34 +80,22 @@ flowchart LR
 и Android-приложения хранится в отдельном закрытом репозитории. Workflow здесь
 проверяет и публикует **подготовленные** файлы, не собирает и не подписывает приложение.
 
-`ota/` — действующий канал компонентов; `beta-dist/` — файлы для публикации.
-`wiki/` — справка **этой ветки**, без перехода в общую GitHub Wiki.
-`apk/` и заметки `releases/v*.md` — [архив стабильных версий](releases/README.md#стабильный-архив).
+`ota/` — действующий канал компонентов; `beta-dist/` — файлы для публикации;
+`releases/` — заметки beta-выпусков. Стабильный архив сюда не копируется: он
+целиком в [ветке main](https://github.com/iluhin/app.slovoplet/tree/main).
 
 Beta использует тот же игровой сервер. Локальные данные приложений разделены,
-но вход под тем же именем открывает общий серверный профиль. [Подробнее →](wiki/FAQ.md#профиль-и-данные)
+но вход под тем же именем открывает общий серверный профиль. [Подробнее →](https://github.com/iluhin/app.slovoplet/wiki/FAQ)
 
-## История стабильных версий
+## Стабильная версия
 
-Все стабильные выпуски сохранены. Beta продолжает историю игры; её версии
-3.0 / 3.0.1 относятся к отдельному каналу разработки.
+Вся история игры — от 1.4 до 2.7.2 — живёт в ветке
+[main](https://github.com/iluhin/app.slovoplet/tree/main): заметки к выпускам,
+архив пакетов и справка. Beta её не дублирует, чтобы две копии не разошлись.
 
-| Версия | Что изменилось |
-|---|---|
-| [2.7.2](https://github.com/iluhin/app.slovoplet/releases/tag/v2.7.2) | реплики облачком и смена пароля |
-| [2.7.1](https://github.com/iluhin/app.slovoplet/releases/tag/v2.7.1) | у игры появился характер |
-| [2.7](https://github.com/iluhin/app.slovoplet/releases/tag/v2.7.0) | главная зовёт играть, админка в кармане |
-| [2.6](https://github.com/iluhin/app.slovoplet/releases/tag/v2.6.0) | главная страница и честное время |
-| [2.5](https://github.com/iluhin/app.slovoplet/releases/tag/v2.5.0) | сообщения от создателей игры |
-| [2.4](https://github.com/iluhin/app.slovoplet/releases/tag/v2.4.0) | игра сообщает о пополнении словаря |
-| [2.3](https://github.com/iluhin/app.slovoplet/releases/tag/v2.3.0) | новая иконка и порядок в имени |
-| [2.2](https://github.com/iluhin/app.slovoplet/releases/tag/v2.2.0) | игра стала «Словоплётом» |
-| [2.1](https://github.com/iluhin/app.slovoplet/releases/tag/v2.1.0) | подпись в окне офлайна не рвётся посреди фразы |
-| [2.0](https://github.com/iluhin/app.slovoplet/releases/tag/v2.0.0) | игра работает без интернета |
-| [1.4](https://github.com/iluhin/app.slovoplet/releases/tag/v1.4.0) | первая версия |
-
-[Подробная история приложения и сайта](wiki/Versions.md#стабильная-история-приложения-и-сайта) ·
-[Все опубликованные релизы](https://github.com/iluhin/app.slovoplet/releases)
+[Стабильные выпуски](https://github.com/iluhin/app.slovoplet/releases/latest) ·
+[История версий](https://github.com/iluhin/app.slovoplet/wiki/Versions) ·
+[Все опубликованные выпуски](https://github.com/iluhin/app.slovoplet/releases)
 
 ---
 

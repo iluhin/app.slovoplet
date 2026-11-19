@@ -19,24 +19,8 @@
 
 [Порядок публикации](../docs/RELEASING.md) объясняет роль `beta-dist/` и workflow.
 
-## Стабильный архив
+## Стабильный канал
 
-Файлы `v*.md` в этой папке сохранены как исторические заметки. Они не описывают
-актуальную beta и могут ссылаться на сайт или общую Wiki стабильного канала.
-Полный актуальный архив — в [ветке main](https://github.com/iluhin/app.slovoplet/tree/main/releases).
-
-| Версия | Что изменилось |
-|---|---|
-| [2.7.2](https://github.com/iluhin/app.slovoplet/releases/tag/v2.7.2) | реплики облачком и смена пароля |
-| [2.7.1](https://github.com/iluhin/app.slovoplet/releases/tag/v2.7.1) | у игры появился характер |
-| [2.7](https://github.com/iluhin/app.slovoplet/releases/tag/v2.7.0) | главная зовёт играть, админка в кармане |
-| [2.6](https://github.com/iluhin/app.slovoplet/releases/tag/v2.6.0) | главная страница и честное время |
-| [2.5](https://github.com/iluhin/app.slovoplet/releases/tag/v2.5.0) | сообщения от создателей игры |
-| [2.4](https://github.com/iluhin/app.slovoplet/releases/tag/v2.4.0) | игра сообщает о пополнении словаря |
-| [2.3](https://github.com/iluhin/app.slovoplet/releases/tag/v2.3.0) | новая иконка и порядок в имени |
-| [2.2](https://github.com/iluhin/app.slovoplet/releases/tag/v2.2.0) | игра стала «Словоплётом» |
-| [2.1](https://github.com/iluhin/app.slovoplet/releases/tag/v2.1.0) | подпись в окне офлайна не рвётся посреди фразы |
-| [2.0](https://github.com/iluhin/app.slovoplet/releases/tag/v2.0.0) | игра работает без интернета |
-| [1.4](https://github.com/iluhin/app.slovoplet/releases/tag/v1.4.0) | первая версия |
-
-[Полная история развития приложения и сайта](../wiki/Versions.md#стабильная-история-приложения-и-сайта).
+Заметки о версиях 1.4–2.7.2 и архив пакетов — в
+[ветке main](https://github.com/iluhin/app.slovoplet/tree/main/releases).
+Здесь их копии нет: две копии одного архива рано или поздно разойдутся.
