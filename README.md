@@ -87,6 +87,28 @@ flowchart LR
 Beta использует тот же игровой сервер. Локальные данные приложений разделены,
 но вход под тем же именем открывает общий серверный профиль. [Подробнее →](wiki/FAQ.md#профиль-и-данные)
 
+## История стабильных версий
+
+Все стабильные выпуски сохранены. Beta продолжает историю игры; её версии
+3.0 / 3.0.1 относятся к отдельному каналу разработки.
+
+| Версия | Что изменилось |
+|---|---|
+| [2.7.2](https://github.com/iluhin/app.slovoplet/releases/tag/v2.7.2) | реплики облачком и смена пароля |
+| [2.7.1](https://github.com/iluhin/app.slovoplet/releases/tag/v2.7.1) | у игры появился характер |
+| [2.7](https://github.com/iluhin/app.slovoplet/releases/tag/v2.7.0) | главная зовёт играть, админка в кармане |
+| [2.6](https://github.com/iluhin/app.slovoplet/releases/tag/v2.6.0) | главная страница и честное время |
+| [2.5](https://github.com/iluhin/app.slovoplet/releases/tag/v2.5.0) | сообщения от создателей игры |
+| [2.4](https://github.com/iluhin/app.slovoplet/releases/tag/v2.4.0) | игра сообщает о пополнении словаря |
+| [2.3](https://github.com/iluhin/app.slovoplet/releases/tag/v2.3.0) | новая иконка и порядок в имени |
+| [2.2](https://github.com/iluhin/app.slovoplet/releases/tag/v2.2.0) | игра стала «Словоплётом» |
+| [2.1](https://github.com/iluhin/app.slovoplet/releases/tag/v2.1.0) | подпись в окне офлайна не рвётся посреди фразы |
+| [2.0](https://github.com/iluhin/app.slovoplet/releases/tag/v2.0.0) | игра работает без интернета |
+| [1.4](https://github.com/iluhin/app.slovoplet/releases/tag/v1.4.0) | первая версия |
+
+[Подробная история приложения и сайта](wiki/Versions.md#стабильная-история-приложения-и-сайта) ·
+[Все опубликованные релизы](https://github.com/iluhin/app.slovoplet/releases)
+
 ---
 
 © Илья Анисимов · [iluh.in](https://iluh.in) · [main / стабильный канал](https://github.com/iluhin/app.slovoplet/tree/main)
