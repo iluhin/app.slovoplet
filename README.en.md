@@ -60,12 +60,33 @@ Get the file from the [releases page](../../releases) or directly
 [from the website](https://5bukv.iluh.in/update.php?a=download) — it is signed
 with the same key, so updates install over the existing game.
 
-## iPhone and desktop
+## Desktop and iPhone
 
-There is no separate iPhone app, but the website is a PWA: «Поделиться»
-(Share) → «На экран „Домой“» (Add to Home Screen) gives you an icon,
-launching without an address bar and the same offline game. In Chrome on
-Android and desktop, use the «⋮» menu → «Установить приложение» (Install app).
+The website is a PWA, so it installs like an ordinary app: its own window
+with no address bar, an icon in the Start menu or on the Home screen, and it
+starts without an internet connection.
+
+- **Windows.** A Microsoft Store release is being prepared; the built
+  packages are in [`msstore/`](msstore/). Until it is live, open
+  [the game](https://5bukv.iluh.in) in Edge and click the install icon in the
+  address bar — it is exactly the same app.
+- **iPhone and iPad.** There is no separate app: «Поделиться» (Share) →
+  «На экран „Домой“» (Add to Home Screen).
+- **Chrome** on any system — the «⋮» menu → «Установить приложение»
+  (Install app).
+
+The Windows version has one property the APK does not: the package holds the
+address of the website rather than a copy of the game, so new releases reach
+it on their own, with no app update.
+
+## AppGallery
+
+In AppGallery the game ships under a different package name —
+`com.iluhin.slovoplet` instead of `com.iluhin.fiveletters` — because the
+store would not hand over the original one. That means the AppGallery build
+will not update to the one from the website and vice versa, and both can sit
+on the same phone. Your profile and statistics are shared either way: they
+live on the server.
 
 ## Version history
 
@@ -77,7 +98,7 @@ website serves the same file.
 ## What is in this repository
 
 Only releases and information about the game: release notes, packages of
-previous builds and the wiki. The website and app source code is currently
+previous builds, the Microsoft Store packages and the wiki. The website and app source code is currently
 closed.
 
 This branch is the **stable channel**: the entire history of the game from

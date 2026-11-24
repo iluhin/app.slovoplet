@@ -61,13 +61,33 @@ Descarga el archivo de la [página de versiones](../../releases) o directamente
 [del sitio web](https://5bukv.iluh.in/update.php?a=download): está firmado con
 la misma clave, por lo que la actualización se instala sobre el juego existente.
 
-## iPhone y ordenador
+## Ordenador e iPhone
 
-No hay una aplicación independiente para iPhone, pero el sitio web es una PWA:
-«Поделиться» (Compartir) → «На экран „Домой“» (Añadir a la pantalla de inicio)
-te proporciona un icono, permite abrir el juego sin barra de direcciones y
-ofrece el mismo juego sin conexión. En Chrome para Android y ordenador,
-usa el menú «⋮» → «Установить приложение» (Instalar aplicación).
+El sitio web es una PWA, así que se instala como una aplicación normal: su
+propia ventana sin barra de direcciones, un icono en el menú Inicio o en la
+pantalla de inicio, y arranca sin conexión.
+
+- **Windows.** Se está preparando la publicación en Microsoft Store; los
+  paquetes ya compilados están en [`msstore/`](msstore/). Mientras tanto,
+  abre [el juego](https://5bukv.iluh.in) en Edge y pulsa el icono de
+  instalación de la barra de direcciones: es exactamente la misma aplicación.
+- **iPhone y iPad.** No hay una aplicación independiente: «Поделиться»
+  (Compartir) → «На экран „Домой“» (Añadir a la pantalla de inicio).
+- **Chrome** en cualquier sistema: menú «⋮» → «Установить приложение»
+  (Instalar aplicación).
+
+La versión para Windows tiene algo que el APK no tiene: el paquete no
+contiene una copia del juego, sino la dirección del sitio web, así que las
+nuevas versiones llegan solas, sin actualizar la aplicación.
+
+## AppGallery
+
+En AppGallery el juego sale con otro nombre de paquete:
+`com.iluhin.slovoplet` en lugar de `com.iluhin.fiveletters`, porque la tienda
+no cedió el original. Eso significa que la versión de AppGallery no se
+actualizará a la del sitio web ni al revés, y que ambas pueden convivir en el
+mismo teléfono. El perfil y las estadísticas son los mismos en cualquier
+caso: están en el servidor.
 
 ## Historial de versiones
 
@@ -79,7 +99,7 @@ web ofrece ese mismo archivo.
 ## Qué contiene este repositorio
 
 Solo versiones e información sobre el juego: notas de las versiones, paquetes
-de compilaciones anteriores y la wiki. El código fuente del sitio web y de
+de compilaciones anteriores, los paquetes para Microsoft Store y la wiki. El código fuente del sitio web y de
 la aplicación sigue siendo cerrado por ahora.
 
 Esta rama es el **canal estable**: toda la historia del juego desde la 1.4
