@@ -6,7 +6,7 @@
 
 # Словоплёт
 
-**Adivina la palabra de cinco letras.** Diccionario ruso, clasificación, cinco temas —
+**Adivina la palabra de cinco letras.** Diccionario ruso, clasificación, ocho temas —
 y un juego que sigue funcionando en el metro.
 
 [**▶ Jugar en el navegador**](https://5bukv.iluh.in/) ·
@@ -23,14 +23,30 @@ Introduce una palabra de cinco letras y el juego coloreará cada letra:
 
 | | |
 |---|---|
-| 🟩 | la letra está en el lugar correcto |
-| 🟨 | la letra aparece en la palabra, pero en otro lugar |
+| 🟨 | la letra está en el lugar correcto |
+| 🟦 | la letra aparece en la palabra, pero en otro lugar |
 | ⬜ | la letra no aparece en la palabra |
 
 Tienes cinco intentos. Hay dos modos: «Случайное слово» (Palabra aleatoria)
 y «Слово дня» (Palabra del día), la misma para todos hasta medianoche.
 Las partidas cuentan para la clasificación general si has creado un perfil;
 también puedes jugar como invitado.
+
+## Temas
+
+Ocho temas: seis esquemas de color tranquilos y dos con carácter.
+
+- **Cuaderno** — una hoja cuadriculada con margen, hojas rayadas en las
+  ventanas, letras escritas a mano y casillas que no se rellenan, sino que
+  se colorean: con rotulador fluorescente, bolígrafo azul o lápiz.
+- **Tiempo** — el tablero vive el tiempo que hace ahora en tu ventana: un
+  rayo de sol que broncea las letras, estrellas de noche, hojas al viento,
+  gotas en el cristal y filas que se mojan, gorros de nieve y hielo cuando
+  hiela. Para quien tiene perfil. La ciudad la determina nuestro propio
+  servidor con su propia base de datos, sin pedir la ubicación y sin
+  enviar tu dirección a nadie ([detalles](https://5bukv.iluh.in/privacy.html)).
+
+Ambos ya están en el sitio web y llegarán a la aplicación con la versión 2.8.
 
 ## Aplicación para Android
 

@@ -6,7 +6,7 @@
 
 # Словоплёт
 
-**Guess the five-letter word.** A Russian dictionary, a leaderboard, five themes —
+**Guess the five-letter word.** A Russian dictionary, a leaderboard, eight themes —
 and a game that holds up on the subway.
 
 [**▶ Play in your browser**](https://5bukv.iluh.in/) ·
@@ -23,14 +23,30 @@ Enter a five-letter word — the game colors each letter:
 
 | | |
 |---|---|
-| 🟩 | the letter is in the right place |
-| 🟨 | the letter is in the word, but in a different place |
+| 🟨 | the letter is in the right place |
+| 🟦 | the letter is in the word, but in a different place |
 | ⬜ | the letter is not in the word |
 
 You have five attempts. There are two modes: «Случайное слово» (Random Word)
 and «Слово дня» (Word of the Day) — the same word for everyone until midnight.
 Games count toward the overall leaderboard if you have created a profile;
 you can also play as a guest.
+
+## Themes
+
+Eight themes: six calm colour schemes and two with character.
+
+- **Notebook** — a squared exercise-book page with a margin, lined paper in
+  the windows, handwritten letters, and squares that are not filled but
+  coloured in: with a highlighter, a blue pen, a pencil.
+- **Weather** — the board lives the weather outside your window: a sunbeam
+  that gives the letters a tan, stars at night, leaves in the wind, drops on
+  the glass and rows getting wet, snow caps and ice in frost. For players
+  with a profile. Your city is determined by our own server from its own
+  database — no location permission, and your address is passed to no one
+  ([details](https://5bukv.iluh.in/privacy.html)).
+
+Both are on the website now and come to the app with version 2.8.
 
 ## Android app
 
